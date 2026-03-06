@@ -43,7 +43,8 @@ class_name Player
 @export var regen_amount: float = 5.0
 
 const jump_sound: AudioStream = preload("res://assets/sounds/jump_01.wav")
-const BulletScene = preload("res://world/objects/bullet.tscn")
+const hurt_sound: AudioStreamWAV = preload("res://assets/sounds/hurt.wav")
+const bullet_scene: PackedScene = preload("res://world/objects/bullet.tscn")
 
 # Onready variable to reference the Sprite2D node for animations.
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -53,7 +54,7 @@ const BulletScene = preload("res://world/objects/bullet.tscn")
 @onready var right_ray_cast: RayCast2D = $RightRayCast
 @onready var bullet_spawn_point: Node2D = $BulletSpawnPoint
 @onready var camera: Camera2D = $Camera
-@onready var health_comp = $HealthComponent
+@onready var health_comp: HealthComponent = $HealthComponent
 
 var bullet_fire_timer: float = 0.0
 
@@ -354,7 +355,7 @@ func _end_on_floor():
 	gravity_active = true
 
 func _spawn_bullet():
-	var bullet: Bullet = BulletScene.instantiate()
+	var bullet: Bullet = bullet_scene.instantiate()
 	bullet.global_position = bullet_spawn_point.global_position
 	if prev_movement_dir == _MOVEMENT_DIR.LEFT:
 		bullet.direction = Vector2.LEFT
@@ -363,6 +364,8 @@ func _spawn_bullet():
 	get_parent().add_child(bullet)
 
 func _on_damage_taken() -> void:
+	SoundManager.play("SFX", hurt_sound, true)
+
 	is_regening = false
 	_start_regen_timer()
 

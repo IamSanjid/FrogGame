@@ -1,5 +1,7 @@
 extends Node
 
+class_name DamageComponent
+
 @export var base_damage: float = 10.0
 var damage_multiplier: float = 1.0
 

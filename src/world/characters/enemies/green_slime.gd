@@ -8,7 +8,7 @@ extends Node2D
 @onready var down_left_raycast: RayCast2D = $DownLeftRaycast
 @onready var down_right_raycast: RayCast2D = $DownRightRaycast
 
-@onready var health_comp := $HealthComponent
+@onready var health_comp: HealthComponent = $HealthComponent
 
 @export var base_speed := 80.0
 

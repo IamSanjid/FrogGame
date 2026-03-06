@@ -7,7 +7,7 @@ class_name Bullet
 @export var speed: float = 600.0
 
 @onready var sprite = $Sprite
-@onready var damage_comp = $DamageComponent
+@onready var damage_comp: DamageComponent = $DamageComponent
 
 const explosion_sound: AudioStreamWAV = preload("res://assets/sounds/explosion.wav")
 
@@ -41,9 +41,6 @@ func _on_area_entered(area: Area2D) -> void:
 		_do_damage(parent)
 
 func _do_damage(node: Node2D) -> void:
-	if node.has_node("FlashComponent"):
-		node.get_node("FlashComponent").flash()
-
 	if node.has_node("HealthComponent"):
 		node.get_node("HealthComponent").apply_damage(damage_comp.get_damage())
 		queue_free()
