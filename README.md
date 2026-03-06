@@ -25,8 +25,8 @@ Practice and learn the basics of the Godot Game Engine:
 
 - Add new levels to the game.
 - Make the UI more attractive and interesting.
-- Implement sound.
-- Implement enemies.
+- Implement background music and add more sound effects.
+- Implement variety of enemies with different attacks.
 
 ## How to Play This Game on Your Machine?
 
@@ -57,6 +57,14 @@ Contributions to this project are welcome! If you'd like to contribute, please f
 
 1. [Coco Code YouTube channel](https://www.youtube.com/watch?v=5V9f3MT86M8) and [video 2](https://www.youtube.com/watch?v=zL__a0Ei6Vs)
 2. [Pixel adventure assets](https://pixelfrog-assets.itch.io/pixel-adventure-1)
+3. [Brackeys YouTube Video](https://www.youtube.com/watch?v=LOhfqjmasi0)
+
+SFX are collected from:
+* https://pixabay.com/sound-effects/search/retro%20food%20eating/
+* https://mixkit.co/free-sound-effects/game/
+* https://opengameart.org/content/library-of-game-sounds
+* Bullet Pixel Art: https://bdragon1727.itch.io/fire-pixel-bullet-16x16
+* Enemy Pixel Art, Explosion, Hit Sound: https://brackeysgames.itch.io/brackeys-platformer-bundle
 
 ## License
 
@@ -65,4 +73,3 @@ This project is licensed under the MIT License.
 ## Authors
 
 - [Md Mahmudul Hasan](https://github.com/MahmudulHasn) - Initial work
-```

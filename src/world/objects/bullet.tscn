@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bkm16jsyblflv"]
+
+[ext_resource type="Script" uid="uid://cqam6w56tw5fy" path="res://world/objects/bullet.gd" id="1_5uftw"]
+[ext_resource type="Texture2D" uid="uid://dlmroe6k6uskg" path="res://assets/sprites/objects/Bullet.png" id="2_memah"]
+[ext_resource type="PackedScene" uid="uid://cmnml3g5yb5i1" path="res://world/core/damage_component.tscn" id="3_memah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjwjs"]
+atlas = ExtResource("2_memah")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_engwm"]
+atlas = ExtResource("2_memah")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baa0q"]
+atlas = ExtResource("2_memah")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia1r3"]
+atlas = ExtResource("2_memah")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjgh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjwjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_engwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baa0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia1r3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blytl"]
+radius = 2.0
+height = 4.0
+
+[node name="Bullet" type="Area2D" unique_id=1564412134]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_5uftw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=765428720]
+texture_filter = 1
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_gjgh6")
+frame = 3
+frame_progress = 0.51701134
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565092108]
+scale = Vector2(6, 6)
+shape = SubResource("CapsuleShape2D_blytl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2144578153]
+
+[node name="DamageComponent" parent="." unique_id=2109691276 instance=ExtResource("3_memah")]
+base_damage = 20.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_screen_exited"]

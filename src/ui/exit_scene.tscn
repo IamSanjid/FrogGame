@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://pjv6r6e0wjdy"]
+
+[ext_resource type="Texture2D" uid="uid://bryutm3lyetn6" path="res://assets/sprites/Brown.png" id="1_1khis"]
+[ext_resource type="Script" uid="uid://c4l2surrwvf30" path="res://ui/exit_scene.gd" id="1_bvau5"]
+
+[node name="ExitScene" type="Node2D" unique_id=1551846630]
+script = ExtResource("1_bvau5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1577317321]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 1249.0
+offset_bottom = 686.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1khis")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=604414764]
+offset_left = 303.0
+offset_top = 189.0
+offset_right = 890.0
+offset_bottom = 434.0
+
+[node name="Exit Text" type="Label" parent="Panel" unique_id=1546031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.964706, 0.780392, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Good job!
+ You have completed both
+ level 1 & level 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=736385975]
+offset_left = 431.0
+offset_top = 492.0
+offset_right = 771.0
+offset_bottom = 549.0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.776471, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Return to Main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_mainmenu_button_pressed"]

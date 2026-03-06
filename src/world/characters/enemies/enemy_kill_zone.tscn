@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b2rpgjpt64dqs"]
+
+[ext_resource type="Script" uid="uid://baso6eo5gfel5" path="res://world/characters/enemies/enemy_kill_zone.gd" id="1_cu6um"]
+[ext_resource type="PackedScene" uid="uid://cmnml3g5yb5i1" path="res://world/core/damage_component.tscn" id="2_7ldk2"]
+
+[node name="EnemyKillZone" type="Area2D" unique_id=949654032]
+script = ExtResource("1_cu6um")
+
+[node name="DamageComponent" parent="." unique_id=2109691276 instance=ExtResource("2_7ldk2")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

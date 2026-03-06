@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://v71476qj0a8o"]
+
+[ext_resource type="Script" uid="uid://gc1pgay2lpra" path="res://ui/in_level.gd" id="1_dq1mr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq1mr"]
+bg_color = Color(0.060530342, 0.060530365, 0.060530297, 0.47058824)
+
+[node name="InLevel" type="CanvasLayer" unique_id=927364058]
+script = ExtResource("1_dq1mr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1231699172]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1840061763]
+custom_minimum_size = Vector2(174, 62)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=1449036048]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1115479092]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=2105110146]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=766405236]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "Points:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1801772111]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=933737576]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=449165642]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "Health:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=896159185]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=39823600]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(300, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dq1mr")
+
+[node name="Label" type="Label" parent="GameOverPanel" unique_id=1889764332]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -29.5
+offset_right = 129.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.964706, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.117647, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 20
+text = "Game Over
+Press any key to continue.."
+horizontal_alignment = 1
+vertical_alignment = 1
